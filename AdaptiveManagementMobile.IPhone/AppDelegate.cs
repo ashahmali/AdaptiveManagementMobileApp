@@ -17,10 +17,25 @@ namespace AdaptiveManagementMobile.IPhone
             set;
         }
 
+		public UINavigationController RootNavigationController {
+			get;
+			private set;
+		}
+
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
+			Window = new UIWindow(UIScreen.MainScreen.Bounds);
+
+			RootNavigationController = new UINavigationController ();
+
+			var loginViewController = new LoginViewController ();
+			RootNavigationController.PushViewController (loginViewController, false);
+
+			Window.RootViewController = RootNavigationController;
+
+			Window.MakeKeyAndVisible ();
 
             return true;
         }

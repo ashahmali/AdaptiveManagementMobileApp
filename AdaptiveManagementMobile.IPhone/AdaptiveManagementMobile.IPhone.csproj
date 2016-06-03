@@ -96,6 +96,33 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <InterfaceDefinition Include="LoginViewController.xib" />
+    <Compile Include="MainApplicationTabbedViewController.cs" />
+    <InterfaceDefinition Include="UsersViewController.xib" />
+    <Compile Include="UsersViewController.cs" />
+    <Compile Include="UsersViewController.designer.cs">
+      <DependentUpon>UsersViewController.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="QueuesViewController.xib" />
+    <Compile Include="QueuesViewController.cs" />
+    <Compile Include="QueuesViewController.designer.cs">
+      <DependentUpon>QueuesViewController.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="ReportsViewController.xib" />
+    <Compile Include="ReportsViewController.cs" />
+    <Compile Include="ReportsViewController.designer.cs">
+      <DependentUpon>ReportsViewController.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="AccountViewController.xib" />
+    <Compile Include="AccountViewController.cs" />
+    <Compile Include="AccountViewController.designer.cs">
+      <DependentUpon>AccountViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueueTableDataSource.cs" />
+    <InterfaceDefinition Include="SingleQueueViewController.xib" />
+    <Compile Include="SingleQueueViewController.cs" />
+    <Compile Include="SingleQueueViewController.designer.cs">
+      <DependentUpon>SingleQueueViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FirstViewController.cs" />
@@ -107,27 +134,6 @@
       <DependentUpon>SecondViewController.cs</DependentUpon>
     </Compile>
     <InterfaceDefinition Include="Main.storyboard" />
-    <ImageAsset Include="Resources/Media.xcassets/AppIcons.appiconset/AdaptiveIcons@x2.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources/Media.xcassets/AppIcons.appiconset/AdaptiveIcons@x3.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources/Media.xcassets/AppIcons.appiconset/Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources/Media.xcassets/Images.imageset/logo.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources/Media.xcassets/LaunchImages.launchimage/AdaptiveLunchIcon@x2.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources/Media.xcassets/LaunchImages.launchimage/AdaptiveLunchIcon@x3.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources/Media.xcassets/LaunchImages.launchimage/Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
@@ -143,6 +149,10 @@
     <ImageAsset Include="Resources\Images.xcassets\Second.imageset\Second.pdf">
       <InProject>false</InProject>
     </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\AdaptiveLunchIcon%40x2.png" />
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\AdaptiveLunchIcon%40x3.png" />
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\TabBar.imageset\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -153,6 +163,45 @@
   <ItemGroup>
     <Content Include="Entitlements.plist" />
     <BundleResource Include="Resources\AdaptiveLunchIcon.png" />
+    <BundleResource Include="Resources\Images.xcassets\Contents.json" />
+    <BundleResource Include="Resources\Images.xcassets\AppIcons.appiconset\AdaptiveIcons%40x2.png" />
+    <BundleResource Include="Resources\Images.xcassets\AppIcons.appiconset\AdaptiveIcons%40x3.png" />
+    <BundleResource Include="Resources\Images.xcassets\LoginLogo.imageset\Contents.json" />
+    <BundleResource Include="Resources\Images.xcassets\LoginLogo.imageset\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\Images.xcassets\UserImage.imageset\Contents.json" />
+    <BundleResource Include="Resources\Images.xcassets\UserImage.imageset\user_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\Images.xcassets\LoginLogo.imageset\logo-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\Images.xcassets\LoginLogo.imageset\logo-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\Images.xcassets\UserImage.imageset\user_icon-1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\Images.xcassets\UserImage.imageset\user_icon-2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\Images.xcassets\AppIcons.appiconset\AdaptiveIcons%40x2-1.png" />
+    <BundleResource Include="Resources\Media.xcassets\Contents.json" />
+    <BundleResource Include="Resources\Images.xcassets\TabBarMe.imageset\Contents.json" />
+    <BundleResource Include="Resources\Images.xcassets\TabBarMe.imageset\SingleUser%40x2.png" />
+    <BundleResource Include="Resources\Images.xcassets\TabBarMe.imageset\user.png" />
+    <BundleResource Include="Resources\Images.xcassets\TabBarQueues.imageset\Contents.json" />
+    <BundleResource Include="Resources\Images.xcassets\TabBarQueues.imageset\Queue.png" />
+    <BundleResource Include="Resources\Images.xcassets\TabBarQueues.imageset\Queue%40x2.png" />
+    <BundleResource Include="Resources\Images.xcassets\TabBarReport.imageset\Contents.json" />
+    <BundleResource Include="Resources\Images.xcassets\TabBarReport.imageset\Report.png" />
+    <BundleResource Include="Resources\Images.xcassets\TabBarReport.imageset\Report%40x2.png" />
+    <BundleResource Include="Resources\Images.xcassets\TabBarUsers.imageset\Contents.json" />
+    <BundleResource Include="Resources\Images.xcassets\TabBarUsers.imageset\Users.png" />
+    <BundleResource Include="Resources\Images.xcassets\TabBarUsers.imageset\user%40x2.png" />
+    <BundleResource Include="Resources\.DS_Store" />
+    <BundleResource Include="Resources\Queue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
